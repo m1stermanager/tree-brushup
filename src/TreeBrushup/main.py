@@ -1,5 +1,8 @@
+import random
+
+
 def main():
-    x = {"a": "b", "c": "d"}
+    random.random()
     pass
 
 
