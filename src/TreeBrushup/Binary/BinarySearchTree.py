@@ -79,3 +79,6 @@ class BinarySearchTree:
             return traverse_looking_for(node.right, value)
 
         return traverse_looking_for(self.root, value)
+
+    def __contains__(self, value):
+        return self.exists(value)
