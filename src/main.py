@@ -1,7 +1,7 @@
 from TreeBrushup.Binary.BinarySearchTree import BinarySearchTree
 
 
-def main():
+def build_bst():
     tree = BinarySearchTree()
 
     tree.insert(5)
@@ -13,6 +13,11 @@ def main():
     tree.insert(6)
     tree.insert(4)
 
+    return tree
+
+
+def main():
+    tree = build_bst()
     print(tree)
 
 

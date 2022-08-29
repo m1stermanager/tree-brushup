@@ -37,18 +37,8 @@ class BinarySearchTree:
             if n.left:
                 print_node(n.left, depth + 1)
 
-            # print(f"d: {depth} v: {n.value}")
-
         print_node(self.root)
         return result
-
-        # right_strings.reverse()
-        # left_strings.reverse()
-        # return (
-        #     "\n\n".join(right_strings)
-        #     + f"\n\n{self.root.value}\n\n"
-        #     + "\n\n".join(left_strings)
-        # )
 
     def insert(self, value: Any):
         if not self.root:
@@ -76,4 +66,16 @@ class BinarySearchTree:
         traverse_or_insert(self.root, value)
 
     def exists(self, value: Any) -> bool:
-        pass
+        def traverse_looking_for(node: Node, value):
+            if node is None:
+                return False
+
+            if node.value == value:
+                return True
+
+            if value < node.value:
+                return traverse_looking_for(node.left, value)
+
+            return traverse_looking_for(node.right, value)
+
+        return traverse_looking_for(self.root, value)
